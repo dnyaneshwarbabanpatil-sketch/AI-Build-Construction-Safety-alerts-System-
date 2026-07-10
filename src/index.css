@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Glassmorphism custom classes and custom styling */
+.glass {
+  background: rgba(15, 17, 21, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card {
+  background: rgba(26, 29, 35, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(245, 158, 11, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Custom animation for hazardous flashing indicators */
+@keyframes warning-flash {
+  0%, 100% { opacity: 1; border-color: rgba(239, 68, 68, 0.8); background-color: rgba(239, 68, 68, 0.15); }
+  50% { opacity: 0.6; border-color: rgba(239, 68, 68, 0.2); background-color: rgba(239, 68, 68, 0.02); }
+}
+
+.animate-warning-flash {
+  animation: warning-flash 2s infinite ease-in-out;
+}
+
+/* Custom progress grid line style */
+.grid-line {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
